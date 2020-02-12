@@ -25,7 +25,6 @@ pipeline {
 		}
 
 		
-
 		stage('Create conf file cluster') {
 			steps {
 				withAWS(region:'us-west-2', credentials:'udacity1') {
