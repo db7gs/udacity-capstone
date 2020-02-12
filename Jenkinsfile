@@ -4,7 +4,7 @@ pipeline {
 
 		stage('kubernetes cluster Creation') {
 			steps {
-				withAWS(region:'us-west-2', credentials:'jenkins') {
+				withAWS(region:'us-west-2', credentials:'udacity1') {
 					sh '''
 						eksctl create cluster \
 						--name capstoneudacitycluster \
@@ -28,7 +28,7 @@ pipeline {
 
 		stage('Create conf file cluster') {
 			steps {
-				withAWS(region:'us-west-2', credentials:'jenkins') {
+				withAWS(region:'us-west-2', credentials:'udacity1') {
 					sh '''
 						aws eks --region us-west-2 update-kubeconfig --name capstoneudacitycluster
 					'''
