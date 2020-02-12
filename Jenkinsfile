@@ -1,8 +1,8 @@
 pipeline {
-  agent any
-  stages {
+	agent any
+	stages {
 
-		stage('kubernetes cluster Creation') {
+		stage('Kubernetes Cluster Creation') {
 			steps {
 				withAWS(region:'us-west-2', credentials:'udacity1') {
 					sh '''
@@ -23,15 +23,18 @@ pipeline {
 				}
 			}
 		}
+
+		
+
 		stage('Create conf file cluster') {
 			steps {
 				withAWS(region:'us-west-2', credentials:'udacity1') {
 					sh '''
 						aws eks --region us-west-2 update-kubeconfig --name capstoneudacitycluster
 					'''
-        }
-      }
-    }
+				}
+			}
+		}
 
-  }
+	}
 }
