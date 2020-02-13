@@ -10,7 +10,7 @@ pipeline {
 
 		stage('Lint HTML') {
 			steps {
-				sh 'tidy /var/lib/jenkins/workspace/Building_master/Deploy/index.html'
+				sh 'cd Deploy/ && tidy index.html'
 			}
 		}
 		
