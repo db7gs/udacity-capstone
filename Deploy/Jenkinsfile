@@ -2,11 +2,6 @@ pipeline {
 	agent any
 	stages {
 
-		stage('Validating path') {
-			steps {
-				sh 'pwd'
-			}
-		}
 
 		stage('Lint HTML') {
 			steps {
