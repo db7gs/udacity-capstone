@@ -8,7 +8,7 @@ pipeline {
 				sh 'cd Deploy/ && tidy index.html'
 			}
 		}
-		
+
 		
 		stage('Building Docker Image') {
 			steps {
@@ -25,7 +25,7 @@ pipeline {
 				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]){
 					sh '''
 						docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-						docker push webserver-image:v1
+						docker push db7gs/webserver-image:v1
 					'''
 				}
 			}
