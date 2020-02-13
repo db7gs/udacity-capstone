@@ -2,7 +2,6 @@ pipeline {
 	agent any
 	stages {
 
-
 		stage('Lint HTML') {
 			steps {
 				sh 'cd Deploy/ && tidy index.html'
