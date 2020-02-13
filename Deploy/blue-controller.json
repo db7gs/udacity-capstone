@@ -22,7 +22,7 @@
              "containers":[
                 {
                    "name":"blue",
-                   "image":"db7gs/webserver-image:v1",
+                   "image":"db7gs/webserver-image:v2",
                    "ports":[
                       {
                          "name":"http-server",
