@@ -2,7 +2,6 @@
 
 This is a project for udacity nanodegree Cloud dev-ops Engineer about to deploy a web app using a docker image and jenkins to run a pipeline.
 
-
 ## The files included are:
 ```sh
 * ./Dockerfile : Dockerfile for building the image with nginx server
@@ -11,6 +10,15 @@ This is a project for udacity nanodegree Cloud dev-ops Engineer about to deploy 
 * ./blue-controller.json: The controller to deploy blue proecess
 * ./gree-controller.json: The controller to deploy green process
 * ./Jenkinsfile : the file to deploy all the CI/CD process into EKS cluster.
+
+## STEPS:
+* Lint HTML
+* Build docker image.
+* Push docker to docker hub
+* Deploy the container to blue
+* Deploy the container to green.
+
+
 
 
 License
