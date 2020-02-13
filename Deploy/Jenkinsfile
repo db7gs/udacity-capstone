@@ -13,7 +13,7 @@ pipeline {
 			steps {
 				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]){
 					sh '''
-						cd Deploy/ && docker build -t db7gs/webserver-image:v1 .
+						cd Deploy/ && docker build -t db7gs/webserver-image:v2 .
 					'''
 				}
 			}
@@ -24,7 +24,7 @@ pipeline {
 				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]){
 					sh '''
 						docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD docker.io
-						docker push db7gs/webserver-image:v1
+						docker push db7gs/webserver-image:v2
 					'''
 				}
 			}
